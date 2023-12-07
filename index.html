@@ -69,10 +69,8 @@
   }
 
   .image_container img {
-
     position: absolute;
-    width: 120%;
-    height: 100%;
+    height: auto;
     object-fit: cover; /* 这会使图片保持原始比例，但仍然填充其容器 */
     object-position: center; /* 新增加的代码，让图片居中 */
   }
@@ -507,7 +505,7 @@
   </div>
   <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-      <h3 class="title is-4">Object Relocation</h3>
+      <h3 class="title is-4">Camera Panning</h3>
       <br>
     </div>
   </div>
@@ -539,10 +537,29 @@
   </div>
   <div class="columns is-centered has-text-centered">
     <div class="column is-four-fifths">
-      <h3 class="title is-4">Camera panning</h3>
+      <h3 class="title is-4">Zooming Out</h3>
       <br>
     </div>
   </div>    
+  <div class="columns is-vcentered interpolation-panel"> 
+    <!-- 第一个图片元素，使用 is-offset-1 -->
+    <div class="columns is-centered">
+      <div class="column is-2 ">
+        <img src="./static_lr/img_new/applications/zoom/01/0.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+        <p></p>
+      </div>
+      <div class="column is-2 ">
+        <img src="./static_lr/img_new/applications/zoom/01/1.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+        <p></p>
+      </div>
+      <div class="column is-2 ">
+        <img src="./static_lr/img_new/applications/zoom/01/2.jpg" class="interpolation-image" alt="Interpolate start reference image."/>
+        <p></p>
+      </div>
+    </div>  
+  <!-- 最后一个图片元素，使用 is-offset-1 -->
+  </div>
+
   <br>
   <br>
   <br>
