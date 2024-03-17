@@ -381,7 +381,7 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <div style="display: flex;justify-content: center;">
-          <img src="./static_lr/img_new/pipeline/teaser_v2.jpg" alt="pipeline" style="width: 80%;">       
+          <img src="./static_lr/img_new/pipeline/teaser_v2.jpg" alt="pipeline" style="width: 100%;">       
         </div>
         <br>
       </div>
@@ -399,28 +399,39 @@
         <h2 class="title is-3">Abstract</h2>
         <div class="content has-text-justified">
           <p>
-            Recently, achieving precise image editing on photorealistic 
-            images has garnered increasing attention, especially in
-            light of the remarkable success of text-to-image generation
-            models. In this paper, we focus on a novel task in visual
-            design image editing and introduce a simple yet effective
-            masked-guided diffusion approach. 
+            Recently, how to achieve precise image editing has attracted increasing attention, 
+            especially given the remarkable success of text-to-image generation models. 
+            To unify various spatial-aware image editing abilities into one framework, 
+            we adopt the concept of layers from the design domain to 
+            manipulate objects flexibly with various operations. 
+            The key insight is to transform the spatial-aware image editing task into a combination of two sub-tasks: 
+            \emph{multi-layered latent decomposition} 
+            and \emph{multi-layered latent fusion}.
           </p>
           <p>
-            This approach empowers a wide range of graphic design image editing operations, 
-            including object removal, relocation, resizing, zooming out, camera panning, decoration removal, and more.
-            Our key insight involves strategically modulating (i) the key
-            features within the self-attention stage and (ii) the latent
-            features within the image generation process using the guidance 
-            of a text-based cross-attention mask (for decoration
-            editing) or a more accurate mask predicted by SAM (for
-            object editing). 
+            First, we segment the latent representations of the source images into multiple layers, 
+            which include several object layers and one incomplete background layer that 
+            necessitates reliable inpainting. 
+            To avoid extra tuning, we further explore the inner inpainting ability within 
+            the self-attention mechanism. We introduce a key-masking self-attention scheme 
+            that can propagate the surrounding context 
+            information into the masked region while mitigating its 
+            impact on the regions outside the mask.
           </p>
           <p>
-            Through empirical evidence, we demonstrate that our method 
-            consistently delivers more reliable
-            and accurate results in image editing, even surpassing recent efforts that incorporate advanced techniques such as
-            task-aware energy functions to guide the sampling process.
+            Second, we propose an instruction-guided latent fusion that pastes 
+            the multi-layered latent representations onto a canvas latent. 
+            We also introduce an artifact suppression scheme in the latent space 
+            to enhance the inpainting quality. 
+            Due to the inherent modular advantages of such multi-layered representations, 
+            we can achieve accurate image editing, 
+            and we demonstrate that our approach consistently surpasses the latest spatial editing methods, 
+            including Self-Guidance and DiffEditor. 
+          </p>
+          <p>
+            Lastly, we show that our approach is a unified framework
+            that supports various accurate image editing tasks 
+            on more than six different editing tasks.
           </p>
         </div>
       </div>
