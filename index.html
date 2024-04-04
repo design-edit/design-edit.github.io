@@ -73,7 +73,9 @@
     object-fit: cover; /* 这会使图片保持原始比例，但仍然填充其容器 */
     object-position: center; /* 新增加的代码，让图片居中 */
   }
-
+  .icon img {
+    margin-top: 8px; /* 将图标下移8像素 */
+  }
   .caption {
     position: absolute;
     top: 0;
@@ -249,7 +251,7 @@
                    <span class="icon">
                     <img src="./static/hf-logo-pirate.svg" class="icon" viewBox="0 8 16 24" version="1.1" width="16" height="16" aria-hidden="true" alt="Hugging Face Logo"/>
                   </span>
-                  <span>Hugging Face1</span>
+                  <span>Hugging Face</span>
                 </a>
               </span>
               <!-- <span class="link-block">
